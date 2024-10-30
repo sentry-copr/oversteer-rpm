@@ -1,13 +1,13 @@
 %define debug_package %{nil}
 
 Name:           oversteer
-Version:        0.8.1
+Version:        0.8.3
 Release:        1%{?dist}
 Summary:        Steering Wheel Manager for GNU/Linux
 
 License:        GPL-3.0-only
 URL:            https://github.com/berarma/oversteer
-Source0:        %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  meson
@@ -31,9 +31,6 @@ driver module that enables the hardware on Linux.
 %prep
 %autosetup
 
-# Stray vim swap file managed to make it into the project
-rm oversteer/.device_manager.py.swp
-
 %build
 %meson \
     -Dpython="%{python3}" \
@@ -48,9 +45,9 @@ rm oversteer/.device_manager.py.swp
 %files -f %{name}.lang
 %license LICENSE
 /usr/bin/oversteer
-%{_datadir}/icons/hicolor/scalable/apps/org.berarma.Oversteer.svg
-%{_datadir}/applications/org.berarma.Oversteer.desktop
-%{_datadir}/metainfo/org.berarma.Oversteer.appdata.xml
+%{_datadir}/icons/hicolor/scalable/apps/io.github.berarma.Oversteer.svg
+%{_datadir}/applications/io.github.berarma.Oversteer.desktop
+%{_datadir}/metainfo/io.github.berarma.Oversteer.appdata.xml
 %{_udevrulesdir}/99-thrustmaster-wheel-perms.rules
 %{_udevrulesdir}/99-logitech-wheel-perms.rules
 %{_udevrulesdir}/99-fanatec-wheel-perms.rules
@@ -72,6 +69,9 @@ rm oversteer/.device_manager.py.swp
 %pycached %{python3_sitelib}/oversteer/__init__.py
 
 %changelog
+* Wed Oct 30 2024 Jan200101 <sentrycraft123@gmail.com> - 0.8.3-1
+- Update to 0.8.3
+
 * Sat Mar 23 2024 Jan200101 <sentrycraft123@gmail.com> - 0.8.1-1
 - Initial spec
 
