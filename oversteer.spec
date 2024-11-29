@@ -2,7 +2,7 @@
 
 Name:           oversteer
 Version:        0.8.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Steering Wheel Manager for GNU/Linux
 
 License:        GPL-3.0-only
@@ -69,6 +69,9 @@ driver module that enables the hardware on Linux.
 %pycached %{python3_sitelib}/oversteer/__init__.py
 
 %changelog
+* Fri Nov 29 2024 Jan200101 <sentrycraft123@gmail.com> - 0.8.3-2
+- Rebuild for Python 3.13
+
 * Wed Oct 30 2024 Jan200101 <sentrycraft123@gmail.com> - 0.8.3-1
 - Update to 0.8.3
 
