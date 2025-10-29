@@ -11,7 +11,7 @@ Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.
 
 BuildArch:      noarch
 BuildRequires:  meson
-BuildRequires:  python3
+BuildRequires:  python3-devel
 BuildRequires:  python3-gobject
 BuildRequires:  python3-pyudev
 BuildRequires:  python3-pyxdg
