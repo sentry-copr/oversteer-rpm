@@ -2,7 +2,7 @@
 
 Name:           oversteer
 Version:        0.8.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Steering Wheel Manager for GNU/Linux
 
 License:        GPL-3.0-only
@@ -21,6 +21,15 @@ BuildRequires:  python3-scipy
 BuildRequires:  python3-numpy
 BuildRequires:  gettext
 BuildRequires:  systemd-rpm-macros
+
+# None of these are detected as required dependencies
+Requires:  python3-gobject
+Requires:  python3-pyudev
+Requires:  python3-pyxdg
+Requires:  python3-evdev
+Requires:  python3-matplotlib
+Requires:  python3-scipy
+Requires:  python3-numpy
 
 %description
 Oversteer manages steering wheels on Linux using the
@@ -69,6 +78,9 @@ driver module that enables the hardware on Linux.
 %pycached %{python3_sitelib}/oversteer/__init__.py
 
 %changelog
+* Wed Oct 29 2025 Jan200101 <sentrycraft123@gmail.com> - 0.8.3-3
+- Fix dependencies
+
 * Fri Nov 29 2024 Jan200101 <sentrycraft123@gmail.com> - 0.8.3-2
 - Rebuild for Python 3.13
 
